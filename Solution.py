@@ -24,4 +24,4 @@ class Solution:
         print(str(self.get_possibilities_for_not_attending_ceremony()) + "/" + str(valid_ways))
 
 n = int(input())
-print(Solution(n).solve())
+Solution(n).solve()
