@@ -15,8 +15,8 @@ class Solution:
     def get_invalid_attendances(self):  # more then 4 consecutive attendances
         return self._sum(self.n-3)
 
-    def get_possibilities_for_not_attending_ceremony(self):
-        return 2**(self.n - 1) - (self.n - 3)
+    def get_possibilities_for_not_attending_ceremony(self):  # remove out all possible permutations for last day ABSENT
+        return 2**(self.n - 1) - ((self.n - 3) if (self.n - 3 >= 0) else 0)
 
     def solve(self):
         valid_ways = self.get_total_number_of_ways_to_attend_classes() - self.get_invalid_attendances()
